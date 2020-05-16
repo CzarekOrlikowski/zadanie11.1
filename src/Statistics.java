@@ -1,6 +1,6 @@
 public class Statistics {
 
-    public static double averageSalary(Employee[] employees) {
+    public static double getAverageSalary(Employee[] employees) {
         double sumSalary = 0;
         for (int i = 0; i < employees.length; i++) {
             sumSalary += employees[i].getSalary();
@@ -8,10 +8,10 @@ public class Statistics {
         return sumSalary / employees.length;
     }
 
-    public static double highestSalary(Employee[] employees) {
+    public static double getHighestSalary(Employee[] employees) {
         double highestSalary = 0;
 
-        if (employees[0] != null) {
+        if (employees.length != 0) {
             highestSalary = employees[0].getSalary();
         } else {
             throw new NullPointerException("Brak danych!");
@@ -25,10 +25,10 @@ public class Statistics {
         return highestSalary;
     }
 
-    public static double lowestSalary(Employee[] employees) {
+    public static double getLowestSalary(Employee[] employees) {
         double lowestSalary = 0;
 
-        if (employees[0] != null) {
+        if (employees.length != 0) {
             lowestSalary = employees[0].getSalary();
         } else {
             throw new NullPointerException("Brak danych!");
@@ -42,11 +42,11 @@ public class Statistics {
         return lowestSalary;
     }
 
-    public static int employeesNumber(Employee[] employees) {
+    public static int getEmployeesNumber(Employee[] employees) {
         int employeesNumber = 0;
 
         for (Employee employee : employees) {
-            if (employee != null) {
+            if (employees.length != 0) {
                 employeesNumber++;
             } else {
                 throw new NullPointerException("Brak danych");
@@ -55,7 +55,7 @@ public class Statistics {
         return employeesNumber;
     }
 
-    public static int departmentEmployeesNumber(Employee[] employees, String department) {
+    public static int getDepartmentEmployeesNumber(Employee[] employees, String department) {
         int employeesNumber = 0;
 
         for (Employee employee : employees) {

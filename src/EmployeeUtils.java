@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class EmployeeUtils {
 
-    public static int lineCalculator() throws FileNotFoundException {
+    public static int countLines() throws FileNotFoundException {
         String fileName = "C:\\Pliki Czarek\\JAVASTART\\zadanie11.1\\src\\dane.txt";
         File file = new File(fileName);
         int lineNumber = 0;
@@ -22,10 +22,10 @@ public class EmployeeUtils {
         return lineNumber;
     }
 
-    public static Employee[] tableCreator(int indexNumber) throws FileNotFoundException {
+    public static Employee[] createEmployees(int lineNumber) throws FileNotFoundException {
         String fileName = "C:\\Pliki Czarek\\JAVASTART\\zadanie11.1\\src\\dane.txt";
         File file = new File(fileName);
-        Employee[] employees = new Employee[indexNumber];
+        Employee[] employees = new Employee[lineNumber];
         int i = 0;
 
         try (Scanner scan = new Scanner(file)) {

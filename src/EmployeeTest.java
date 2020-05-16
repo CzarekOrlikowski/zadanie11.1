@@ -7,16 +7,16 @@ public class EmployeeTest {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
-        int employeeNumber = EmployeeUtils.lineCalculator();
-        Employee[] employees = EmployeeUtils.tableCreator(employeeNumber);
+        int employeeNumber = EmployeeUtils.countLines();
+        Employee[] employees = EmployeeUtils.createEmployees(employeeNumber);
 
-        Double averageSalary = Statistics.averageSalary(employees);
-        Double highestSalary = Statistics.highestSalary(employees);
-        Double lowestSalary = Statistics.lowestSalary(employees);
-        int employeesNumber = Statistics.employeesNumber(employees);
-        int employeesNumberIt = Statistics.departmentEmployeesNumber(employees, "It");
-        int employeesNumberManagement = Statistics.departmentEmployeesNumber(employees, "Management");
-        int employessNumberSupport = Statistics.departmentEmployeesNumber(employees, "Support");
+        Double averageSalary = Statistics.getAverageSalary(employees);
+        Double highestSalary = Statistics.getHighestSalary(employees);
+        Double lowestSalary = Statistics.getLowestSalary(employees);
+        int employeesNumber = Statistics.getEmployeesNumber(employees);
+        int employeesNumberIt = Statistics.getDepartmentEmployeesNumber(employees, "It");
+        int employeesNumberManagement = Statistics.getDepartmentEmployeesNumber(employees, "Management");
+        int employessNumberSupport = Statistics.getDepartmentEmployeesNumber(employees, "Support");
 
         try {
             String fileName = "daneFirmy.txt";
@@ -26,7 +26,7 @@ public class EmployeeTest {
             dane.newLine();
             dane.write("Najwyższa wypłata: " + highestSalary);
             dane.newLine();
-            dane.write("Najniższa wypłata: " + averageSalary);
+            dane.write("Najniższa wypłata: " + lowestSalary);
             dane.newLine();
             dane.write("Liczba pracowników: " + employeeNumber);
             dane.newLine();
